@@ -1,2 +1,95 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Join Quiz — TechQuiz</title><link rel="stylesheet" href="/static/css/style.css"></head>
-<body data-page="participant"><header class="shell topbar"><a class="brand" href="/"><span class="brand-mark">T</span>TECHQUIZ</a><nav class="nav"><a href="/">Home</a></nav></header><main class="page-main"><section class="narrow content-card" id="participant-screen"><div id="join-screen"><div class="page-title"><div class="kicker">Live competition</div><h1 id="join-title">Join Quiz</h1><p id="join-subtitle">Enter your name to enter the waiting room.</p></div><form id="join-form" class="form-stack" novalidate><div class="field"><label for="participant-name">Your name</label><input id="participant-name" maxlength="60" autocomplete="name" placeholder="e.g. Vijay Kumar" required></div><button id="join-button" class="button button-primary" type="submit">Join quiz</button><p class="notice" id="join-message" aria-live="polite"></p></form></div><div id="waiting-screen" class="waiting-card hidden"><div class="waiting-orb">⌛</div><div class="kicker">Welcome, <span id="waiting-name"></span></div><h1>Waiting for admin</h1><p>Please wait. The quiz will start shortly.</p><p class="participant-count">Participants joined: <strong id="waiting-count">0</strong></p><p class="connection" id="connection-status">Connecting to live quiz…</p></div><div id="quiz-screen" class="quiz-card hidden"><div class="quiz-topline"><div><div class="kicker" id="question-number">Question —</div><span id="question-total">Live competition</span></div><time class="timer" id="timer" aria-label="Time remaining">—</time></div><h1 class="quiz-question" id="question-text">Getting the next question…</h1><div class="answer-options" id="answer-options"></div><p class="answer-feedback" id="answer-feedback" aria-live="polite"></p><p class="connection" id="quiz-connection"></p></div><div id="result-screen" class="hidden"><div class="results-head"><div><div class="kicker">Quiz completed</div><h1>Your result</h1><p id="result-name" class="help">Calculating results…</p></div><span class="status-badge finished">RESULTS READY</span></div><div class="podium" id="my-result-cards"></div><div class="table-wrap"><table><thead><tr><th>Rank</th><th>Name</th><th>Score</th><th>Correct</th><th>Wrong</th><th>Unanswered</th></tr></thead><tbody id="my-result-table"></tbody></table></div></div></section></main><footer class="site-footer"><span>© 2026 TechQuiz</span><strong>Created by Vijay Kumar Dholpuria</strong></footer><script src="/static/js/api.js" defer></script><script src="/static/js/websocket.js" defer></script><script src="/static/js/user.js" defer></script></body></html>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Join Quiz — TechQuiz</title>
+    <link rel="stylesheet" href="/static/css/style.css" />
+  </head>
+  <body data-page="participant">
+    <header class="shell topbar">
+      <a class="brand" href="/"><span class="brand-mark">T</span>TECHQUIZ</a>
+      <nav class="nav"><a href="/">Home</a></nav>
+    </header>
+    <main class="page-main">
+      <section class="narrow content-card" id="participant-screen">
+        <div id="join-screen">
+          <div class="page-title">
+            <div class="kicker">Live competition</div>
+            <h1 id="join-title">Join Quiz</h1>
+            <p id="join-subtitle">Enter your name to enter the waiting room.</p>
+          </div>
+          <form id="join-form" class="form-stack" novalidate>
+            <div class="field">
+              <label for="participant-name">Your name</label
+              ><input
+                id="participant-name"
+                maxlength="60"
+                autocomplete="name"
+                placeholder="e.g. Vijay Kumar"
+                required
+              />
+            </div>
+            <button
+              id="join-button"
+              class="button button-primary"
+              type="submit"
+            >
+              Join quiz
+            </button>
+            <p class="notice" id="join-message" aria-live="polite"></p>
+          </form>
+        </div>
+        <div id="waiting-screen" class="waiting-card hidden">
+          <div class="waiting-orb">⌛</div>
+          <div class="kicker">Welcome, <span id="waiting-name"></span></div>
+          <h1>Waiting for admin</h1>
+          <p>Please wait. The quiz will start shortly.</p>
+          <p class="participant-count">
+            Participants joined: <strong id="waiting-count">0</strong>
+          </p>
+          <p class="connection" id="connection-status">
+            Connecting to live quiz…
+          </p>
+        </div>
+        <div id="quiz-screen" class="quiz-card hidden">
+          <div class="quiz-topline">
+            <div>
+              <div class="kicker" id="question-number">Question —</div>
+              <span id="question-total">Live competition</span>
+            </div>
+            <time class="timer" id="timer" aria-label="Time remaining">—</time>
+          </div>
+          <h1 class="quiz-question" id="question-text">
+            Getting the next question…
+          </h1>
+          <div class="answer-options" id="answer-options"></div>
+          <p
+            class="answer-feedback"
+            id="answer-feedback"
+            aria-live="polite"
+          ></p>
+          <p class="connection" id="quiz-connection"></p>
+        </div>
+        <div id="result-screen" class="hidden">
+          <div class="results-head">
+            <div>
+              <div class="kicker">Quiz completed</div>
+              <h1>Your result</h1>
+              <p id="result-name" class="help"></p>
+            </div>
+            <span class="status-badge finished">RESULTS READY</span>
+          </div>
+          <div class="podium" id="my-result-cards"></div>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <span>© 2026 TechQuiz</span>
+      ><strong>Created by Vijay Kumar Dholpuria</strong>
+    </footer>
+    <script src="/static/js/api.js" defer></script>
+    <script src="/static/js/websocket.js" defer></script>
+    <script src="/static/js/user.js" defer></script>
+  </body>
+</html>
