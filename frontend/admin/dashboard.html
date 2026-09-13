@@ -1,2 +1,68 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Admin Dashboard — TechQuiz</title><link rel="stylesheet" href="/static/css/style.css"></head>
-<body data-page="admin-dashboard"><header class="shell topbar"><a class="brand" href="/"><span class="brand-mark">T</span>TECHQUIZ</a><nav class="nav"><a href="/">View site</a></nav></header><main class="shell page-main dashboard-layout"><aside class="admin-sidebar"><div class="kicker">Control center</div><strong>TECHQUIZ ADMIN</strong><nav class="side-links"><a href="/admin/dashboard">Dashboard</a><a href="/admin/create-quiz">Create quiz</a><button id="logout-button" type="button">Logout</button></nav></aside><section class="admin-main"><div class="page-title"><div class="kicker">Overview</div><h1>Competition command center</h1><p>Set up a new challenge or continue managing the current one.</p></div><div class="grid metrics" id="metrics"><article class="card metric"><div class="label">Active quizzes</div><div class="value">—</div></article><article class="card metric"><div class="label">Current participants</div><div class="value">—</div></article><article class="card metric"><div class="label">Current status</div><div class="value">—</div></article><article class="card metric"><div class="label">Questions</div><div class="value">—</div></article></div><article class="card active-quiz" id="active-quiz"><div class="kicker">Current quiz</div><h2>Loading your dashboard…</h2></article><div class="admin-actions"><a href="/admin/create-quiz" class="button button-primary">Create new quiz</a></div><p class="notice" id="dashboard-message" aria-live="polite"></p></section></main><footer class="site-footer"><span>© 2026 TechQuiz</span><strong>Created by Vijay Kumar Dholpuria</strong></footer><script src="/static/js/api.js" defer></script><script src="/static/js/admin.js" defer></script></body></html>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Admin Dashboard — TechQuiz</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="stylesheet" href="/static/css/style.css" />
+  </head>
+  <body data-page="admin-dashboard">
+    <header class="shell topbar">
+      <a class="brand" href="/"><span class="brand-mark">T</span>TECHQUIZ</a>
+      <nav class="nav"><a href="/">View site</a></nav>
+    </header>
+    <main class="shell page-main dashboard-layout">
+      <aside class="admin-sidebar">
+        <div class="kicker">Control center</div>
+        <strong>TECHQUIZ ADMIN</strong>
+        <nav class="side-links">
+          <a href="/admin/dashboard">Dashboard</a
+          ><a href="/admin/create-quiz">Create quiz</a
+          ><button id="logout-button" type="button">Logout</button>
+        </nav>
+      </aside>
+      <section class="admin-main">
+        <div class="page-title">
+          <div class="kicker">Overview</div>
+          <h1>Competition command center</h1>
+          <p>Set up a new challenge or continue managing the current one.</p>
+        </div>
+        <div class="grid metrics" id="metrics">
+          <article class="card metric">
+            <div class="label">Active quizzes</div>
+            <div class="value">—</div>
+          </article>
+          <article class="card metric">
+            <div class="label">Current participants</div>
+            <div class="value">—</div>
+          </article>
+          <article class="card metric">
+            <div class="label">Current status</div>
+            <div class="value">—</div>
+          </article>
+          <article class="card metric">
+            <div class="label">Questions</div>
+            <div class="value">—</div>
+          </article>
+        </div>
+        <article class="card active-quiz" id="active-quiz">
+          <div class="kicker">Current quiz</div>
+          <h2>Loading your dashboard…</h2>
+        </article>
+        <div class="admin-actions">
+          <a href="/admin/create-quiz" class="button button-primary"
+            >Create new quiz</a
+          >
+        </div>
+        <p class="notice" id="dashboard-message" aria-live="polite"></p>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <span>© 2026 TechQuiz</span
+      ><strong>Created by Vijay Kumar Dholpuria</strong>
+    </footer>
+    <script src="/static/js/api.js" defer></script>
+    <script src="/static/js/admin.js" defer></script>
+  </body>
+</html>
