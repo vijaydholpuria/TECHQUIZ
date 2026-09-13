@@ -48,16 +48,19 @@ async def lifespan(_app: FastAPI):
 
 
 app = FastAPI(title="TechQuiz", version="1.0.0", lifespan=lifespan)
+FRONTEND_URL = os.getenv("FRONTEND_URL", "")
+
 app.add_middleware(
     SessionMiddleware,
     secret_key=SECRET_KEY,
     max_age=60 * 60 * 12,
-    same_site="lax",
+    same_site=os.getenv("COOKIE_SAME_SITE", "lax"),
     https_only=os.getenv("COOKIE_SECURE", "false").lower() == "true",
 )
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[],  # Same-origin frontend is served by this application.
+    allow_origins=[FRONTEND_URL] if FRONTEND_URL else [],
     allow_credentials=True,
     allow_methods=["GET", "POST"],
     allow_headers=["Content-Type"],
