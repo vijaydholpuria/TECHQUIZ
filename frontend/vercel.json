@@ -1,0 +1,40 @@
+{
+  "rewrites": [
+    {
+      "source": "/static/:path*",
+      "destination": "/:path*"
+    },
+    {
+      "source": "/",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/join/:quizId",
+      "destination": "/user/join.html"
+    },
+    {
+      "source": "/admin/login",
+      "destination": "/admin/login.html"
+    },
+    {
+      "source": "/admin/dashboard",
+      "destination": "/admin/dashboard.html"
+    },
+    {
+      "source": "/admin/create-quiz",
+      "destination": "/admin/create-quiz.html"
+    },
+    {
+      "source": "/admin/quiz/:quizId/qr",
+      "destination": "/admin/qr.html"
+    },
+    {
+      "source": "/admin/quiz/:quizId/live",
+      "destination": "/admin/live.html"
+    },
+    {
+      "source": "/admin/quiz/:quizId/results",
+      "destination": "/admin/results.html"
+    }
+  ]
+}

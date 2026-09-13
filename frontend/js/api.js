@@ -1,15 +1,26 @@
 window.TechQuizApi = (() => {
   async function request(path, options = {}) {
-    const response = await fetch(path, {
-      credentials: "same-origin",
-      headers: { "Content-Type": "application/json", ...(options.headers || {}) },
+    const API_BASE_URL = "https://techquiz-232i.onrender.com";
+
+    const response = await fetch(`${API_BASE_URL}${path}`, {
       ...options,
+      credentials: "include",
+      headers: {
+        "Content-Type": "application/json",
+        ...(options.headers || {}),
+      },
     });
+
     if (!response.ok) {
       let detail = "Something went wrong. Please try again.";
-      try { detail = (await response.json()).detail || detail; } catch (_) { /* response was not JSON */ }
+      try {
+        detail = (await response.json()).detail || detail;
+      } catch (_) {
+        /* response was not JSON */
+      }
       throw new Error(detail);
     }
+
     if (response.status === 204) return null;
     return response.json();
   }
@@ -40,7 +51,17 @@ window.TechQuizApi = (() => {
   }
 
   function escapeHtml(value) {
-    return String(value ?? "").replace(/[&<>'"]/g, (character) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", "'": "&#039;", '"': "&quot;" })[character]);
+    return String(value ?? "").replace(
+      /[&<>'"]/g,
+      (character) =>
+        ({
+          "&": "&amp;",
+          "<": "&lt;",
+          ">": "&gt;",
+          "'": "&#039;",
+          '"': "&quot;",
+        })[character],
+    );
   }
 
   return { request, setNotice, setBusy, pageQuizId, escapeHtml };
