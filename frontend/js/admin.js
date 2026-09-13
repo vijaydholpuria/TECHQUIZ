@@ -103,7 +103,7 @@ async function initializeQr() {
   const message = document.querySelector("#qr-message");
   const startButton = document.querySelector("#start-button");
   document.querySelector("#live-link").href = `/admin/quiz/${encodeURIComponent(id)}/live`;
-  image.src = `/api/quizzes/${encodeURIComponent(id)}/qr`;
+  image.src = `https://techquiz-232i.onrender.com/api/quizzes/${encodeURIComponent(id)}/qr`;
   const renderParticipants = async () => {
     try {
       const [details, people] = await Promise.all([TechQuizApi.request(`/api/quizzes/${id}`), TechQuizApi.request(`/api/admin/quizzes/${id}/participants`)]);
