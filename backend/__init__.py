@@ -1,0 +1,1 @@
+"""TechQuiz application package."""
